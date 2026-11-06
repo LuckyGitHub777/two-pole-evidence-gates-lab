@@ -1,0 +1,77 @@
+{
+  "id": "EX-001",
+  "condition": "A technically promising supplier pathway exists, but security qualification is unresolved.",
+  "purpose": "Select a pathway that can support mission use without hiding controlling risk.",
+  "evidence": [
+    {
+      "id": "E-001",
+      "statement": "Prototype met the defined laboratory performance threshold.",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "E-002",
+      "statement": "Security qualification has not yet passed.",
+      "status": "SUPPORTED"
+    }
+  ],
+  "descent": [
+    "Supplier count appears limited.",
+    "The candidate supplier exists but cannot yet enter mission use.",
+    "The controlling issue is qualification rather than supplier count."
+  ],
+  "root_constraint": "Qualification evidence is incomplete.",
+  "inversion": {
+    "prior_frame": "We need more suppliers.",
+    "proposed_frame": "The immediate bottleneck may be qualification, not supplier count.",
+    "evidence_ids": [
+      "E-001",
+      "E-002"
+    ],
+    "counterevidence_ids": [],
+    "falsification_test": "Show that additional qualified suppliers are available and that qualification is not constraining mission entry.",
+    "status": "PROPOSED"
+  },
+  "options": [
+    "Option A",
+    "Option B"
+  ],
+  "validations": [
+    {
+      "id": "V-001",
+      "status": "PASS",
+      "scope": "Laboratory performance",
+      "evidence_ids": [
+        "E-001"
+      ]
+    },
+    {
+      "id": "V-002",
+      "status": "UNKNOWN",
+      "scope": "Security qualification",
+      "evidence_ids": [
+        "E-002"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "TECH-01",
+      "required": true,
+      "status": "PASS",
+      "reason": "Laboratory threshold met."
+    },
+    {
+      "id": "SEC-01",
+      "required": true,
+      "status": "UNKNOWN",
+      "reason": "Qualification evidence incomplete."
+    }
+  ],
+  "comparative_result": "Option B",
+  "human_decision": null,
+  "ecosystem_effects": [
+    "Qualification delay may affect schedule.",
+    "Supplier diversity remains relevant after the immediate gate is resolved."
+  ],
+  "feedback": null
+}

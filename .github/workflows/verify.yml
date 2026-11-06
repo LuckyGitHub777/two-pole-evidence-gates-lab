@@ -1,0 +1,19 @@
+name: Verify evidence-gate model
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Checkout source without token persistence
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check exact content hashes
+        run: sha256sum --check --strict MANIFEST.sha256
+      - name: Test offline educational model
+        run: python -m unittest discover -s tests -v
