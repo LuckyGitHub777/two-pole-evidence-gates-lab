@@ -1,6 +1,8 @@
 # Two-Pole Evidence Gates Lab
 
-A small, offline Python reference for handling uncertainty in structured decisions. The evaluator distinguishes evidence-supported findings, controlling gates and the **human decision** that must not be fabricated by software.
+**Explore online:** [Open the interactive browser companion](https://luckygithub777.github.io/two-pole-evidence-gates-lab/). The hosted companion explains the ideas; the Python CLI and tests remain separate source tools.
+
+A small Python reference with an interactive online companion for handling uncertainty in structured decisions. The evaluator distinguishes evidence-supported findings, controlling gates and the **human decision** that must not be fabricated by software.
 
 ## Try it
 
